@@ -1,13 +1,11 @@
 ## Functions modeled after makeVector: 
-## Use a more complex matrix object that stores inverse if already computed
+## Uses a more complex matrix object that stores value of inverse if already computed
 
-## Write a short comment describing this function
-
-
+## Constructor function for new matrix object:
 makeCacheMatrix <- function(x = matrix()) {
-## Cache matrix methods:
+## CacheMatrix methods:
 
-## setter and getter methods:
+## Setter and getter methods:
 
         i <- NULL
         set <- function(y) {
@@ -16,7 +14,7 @@ makeCacheMatrix <- function(x = matrix()) {
         }
         get <- function() x
 
-## set inverse and get inverse methods:
+## Set inverse and get inverse methods:
 
         setinverse <- function(inverse) i <<- inverse
         getinverse <- function() i
@@ -26,9 +24,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 }
 
-
-## Write a short comment describing this function
-
+## Inverse function for cacheMatrix objects
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 
@@ -41,7 +37,7 @@ cacheSolve <- function(x, ...) {
         }
         data <- x$get()
 
-## otherwise, apply "solve" function to get inverse of matrix
+## otherwise, apply matrix "solve" function to get inverse of matrix
         i <- solve(data, ...)
         x$setinverse(i)
         i
